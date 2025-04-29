@@ -2,6 +2,8 @@
 
 Hackable Portfolio Template written in Rust with Dioxus
 
+See the demo on [hack-portfolio.reify.ing](https://hack-portfolio.reify.ing)!
+
 ## Usage
 
 1. Clone the repository
@@ -16,6 +18,25 @@ Hackable Portfolio Template written in Rust with Dioxus
    dx bundle --platform web --ssg
    ```
    You will see the bundled files in `target/dx/hack-portfolio/release/web/public`.
+
+## How to hack / customize
+
+Fork the repo and:
+
+1. If you want to just change the content, modify [`src/personal_info/mod.rs`](src/personal_info/mod.rs) and add your
+   images to [`src/personal_info/images`](src/personal_info/images).
+2. If you want to add more data to sections, take a look at [`src/data.rs`](src/data.rs) and modify the data types.
+3. You can modify the styles by editing the CSS files in each UI component's directory. For
+   example, [the CSS for project cards](src/components/github_repo_card/github_repo_card.css).
+4. Moreover, you can modify the layout of components and pages by editing the `.rs` files in each component's directory.
+
+Happy hacking!
+
+## TODOs
+
+* [ ] Fix font loading
+* [ ] Add a guide for Vercel deployment
+* [ ] UI polishments
 
 ## License
 
