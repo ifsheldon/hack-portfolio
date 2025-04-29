@@ -1,1 +1,15 @@
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && source "$HOME/.cargo/env" && curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash && cargo binstall dioxus-cli --no-confirm
+#!/bin/bash
+set -eux
+
+# Install Rust non-interactively (default to stable, no prompts)
+curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profile minimal
+
+# Add cargo and rustup to PATH for this session
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Add the musl target for static linking
+rustup target add x86_64-unknown-linux-musl
+
+# Install dioxus-cli for the musl target
+cargo install dioxus-cli --target x86_64-unknown-linux-musl
+
