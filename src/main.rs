@@ -26,9 +26,39 @@ const GLOBAL_CSS: Asset = asset!("/src/global.css");
 const MAIN_CSS: Asset = asset!("/src/main.css");
 const FONT_AWESOME_CSS_PATH: &str = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
 const ICONIFY_JS_PATH: &str = "https://code.iconify.design/1/1.0.7/iconify.min.js";
-fn main() {
-    launch(App);
+
+#[server(endpoint = "static_routes")]
+async fn static_routes() -> Result<Vec<String>, ServerFnError> {
+    // The `Routable` trait has a `static_routes` method that returns all static routes in the enum
+    Ok(Route::static_routes().iter().map(ToString::to_string).collect())
 }
+
+
+fn main() {
+    LaunchBuilder::new()
+        // Set the server config only if we are building the server target
+        .with_cfg(server_only! {
+            ServeConfig::builder()
+                // Enable incremental rendering
+                .incremental(
+                    IncrementalRendererConfig::new()
+                        // Store static files in the public directory where other static assets like wasm are stored
+                        .static_dir(
+                            std::env::current_exe()
+                                .unwrap()
+                                .parent()
+                                .unwrap()
+                                .join("public")
+                        )
+                        // Don't clear the public folder on every build. The public folder has other files including the wasm
+                        // binary and static assets required for the app to run
+                        .clear_cache(false)
+                )
+                .enable_out_of_order_streaming()
+        })
+        .launch(App);
+}
+
 #[component]
 fn App() -> Element {
     rsx! {
