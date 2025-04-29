@@ -1,0 +1,12 @@
+mod home;
+pub use home::Home;
+mod career;
+pub use career::Career;
+mod education;
+pub use education::Education;
+mod projects;
+pub use projects::Projects;
+mod contact;
+pub use contact::Contact;
+mod navbar;
+pub use navbar::Navbar;

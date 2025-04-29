@@ -1,0 +1,132 @@
+.contact-container {
+  padding: 60px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #f5f8ff;
+}
+
+.contact-section, .blog-section, .address-section {
+  margin-bottom: 60px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #55198b;
+}
+
+.contact-container p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.contact-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.contact-image {
+  flex: 1;
+  text-align: center;
+}
+
+.contact-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  max-height: 300px;
+}
+
+.contact-text {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-media-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Info sections layout (Blog and Address side by side) */
+.info-sections {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.blog-section, .address-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.blog-image, .address-image {
+  margin: 20px 0;
+  text-align: center;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-image img, .address-image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.blog-button, .map-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #55198b;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.blog-button:hover, .map-button:hover {
+  background-color: #6e27b8;
+  transform: scale(1.05);
+}
+
+.address-details {
+  margin: 20px 0;
+}
+
+.address-details p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+  }
+  
+  .contact-image, .contact-text {
+    flex: none;
+    width: 100%;
+  }
+  
+  .info-sections {
+    flex-direction: column;
+  }
+  
+  .blog-section, .address-section {
+    width: 100%;
+  }
+}

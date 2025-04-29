@@ -1,0 +1,73 @@
+.social-media-div {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+.icon-button {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-button i {
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  height: 3rem;
+  width: 3rem;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Social Media Colors */
+.github i {
+  background-color: #333;
+}
+
+.linkedin i {
+  background-color: #0e76a8;
+}
+
+.google i {
+  background-color: #ea4335;
+}
+
+/* Hover Transition */
+.icon-button:hover i {
+  transform: scale(1.15);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.github:hover i {
+  background-color: #24292e;
+}
+
+.linkedin:hover i {
+  background-color: #0a66c2;
+}
+
+.google:hover i {
+  background-color: #d03b2d;
+}
+
+@media (max-width: 768px) {
+  .social-media-div {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+}

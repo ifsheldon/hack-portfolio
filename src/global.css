@@ -1,0 +1,127 @@
+/* TODO: figure out how to integrate font files with asset! */
+
+@font-face {
+  font-family: "Agustina Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Agustina Regular"),
+    url("/assets/fonts/Agustina.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("/assets/fonts/Montserrat-Regular.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Google Sans Bold";
+  src: local("Google Sans Bold"),
+    url("/assets/fonts/GoogleSans-Bold.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Google Sans Bold Italic";
+  src: local("Google Sans Bold Italic"),
+    url("/assets/fonts/GoogleSans-BoldItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Google Sans Italic";
+  src: local("Google Sans Italic"),
+    url("/assets/fonts/GoogleSans-Italic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Google Sans Medium";
+  src: local("Google Sans Medium"),
+    url("/assets/fonts/GoogleSans-Medium.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Google Sans Medium Italic";
+  src: local("Google Sans Medium Italic"),
+    url("/assets/fonts/GoogleSans-MediumItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Google Sans Regular";
+  src: local("Google Sans Regular"),
+    url("/assets/fonts/GoogleSans-Regular.ttf") format("woff");
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font: 19px / 23px Montserrat, "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global link styles - removes underlines from all links */
+a {
+  text-decoration: none;
+}
+
+/* Media Query */
+@media (max-width: 1380px) {
+  html,
+  body {
+    font-size: 16px;
+    line-height: normal;
+  }
+}
+
+/* Animations */
+@keyframes fade_down {
+  0% {
+    opacity: 0.01;
+    transform: translateY(-20px);
+    transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+@keyframes fade_up {
+  0% {
+    opacity: 0.01;
+    transform: translateY(20px);
+    transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 300ms cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+}
+
+.heading {
+  color: black;
+}
+
+.subTitle {
+  color: #868e96;
+}
+
+/* Global heading styles */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+}

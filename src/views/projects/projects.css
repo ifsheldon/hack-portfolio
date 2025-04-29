@@ -1,0 +1,29 @@
+.projects-container {
+  padding: 60px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #55198b;
+}
+
+.projects-container p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #555;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}

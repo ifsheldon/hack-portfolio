@@ -1,0 +1,42 @@
+.experience-container {
+  padding: 60px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-container h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #55198b;
+}
+
+.experience-container h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #666;
+  font-weight: normal;
+}
+
+.experience-container > p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #555;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experience-section {
+  margin-bottom: 50px;
+}
+
+.experience-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+  border-bottom: 2px solid #55198b;
+  padding-bottom: 10px;
+}
