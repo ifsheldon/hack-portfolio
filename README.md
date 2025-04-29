@@ -13,7 +13,7 @@ Hackable Portfolio Template written in Rust with Dioxus
    ```
 4. Build the project:
     ```shell
-   dx bundle --platform web
+   dx bundle --platform web --ssg
    ```
    You will see the bundled files in `target/dx/hack-portfolio/release/web/public`.
 
