@@ -16,3 +16,12 @@ Hackable Portfolio Template written in Rust with Dioxus
    dx bundle --platform web
    ```
    You will see the bundled files in `target/dx/hack-portfolio/release/web/public`.
+
+## License
+
+[MIT](LICENSE)
+
+## Acknowledgements
+
+This project is based on [masterPortfolio](https://github.com/ashutosh1919/masterPortfolio) which is licensed under MIT
+license.
