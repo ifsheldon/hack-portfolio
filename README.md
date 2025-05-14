@@ -4,6 +4,8 @@ Hackable Portfolio Template written in Rust with Dioxus
 
 See the demo on [hack-portfolio.reify.ing](https://hack-portfolio.reify.ing)!
 
+Also check out the story behind this project - [Rewrite It in Rust with AI - Oxidize a Portfolio Website in a Day](https://ideas.reify.ing/en/blog/rwiir-with-ai/)
+
 ## Usage
 
 1. Clone the repository
