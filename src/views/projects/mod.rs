@@ -1,6 +1,6 @@
-use dioxus::prelude::*;
 use crate::components::GithubRepoCard;
-use crate::personal_info::{PROJECTS_HEADER, PROJECTS};
+use crate::personal_info::{PROJECTS, PROJECTS_HEADER};
+use dioxus::prelude::*;
 const PROJECTS_CSS: Asset = asset!("/src/views/projects/projects.css");
 #[component]
 pub fn Projects() -> Element {

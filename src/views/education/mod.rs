@@ -1,6 +1,6 @@
+use crate::components::{CertificationCard, DegreeCard};
+use crate::personal_info::{CERTIFICATIONS, DEGREES};
 use dioxus::prelude::*;
-use crate::components::{DegreeCard, CertificationCard};
-use crate::personal_info::{DEGREES, CERTIFICATIONS};
 const EDUCATION_CSS: Asset = asset!("/src/views/education/education.css");
 #[component]
 pub fn Education() -> Element {

@@ -1,5 +1,5 @@
-use dioxus::prelude::*;
 use crate::data::SocialMediaLink;
+use dioxus::prelude::*;
 const SOCIAL_MEDIA_CSS: Asset = asset!("/src/components/social_media/social_media.css");
 #[component]
 pub fn SocialMedia(links: Vec<SocialMediaLink>) -> Element {

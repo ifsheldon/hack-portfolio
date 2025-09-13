@@ -1,6 +1,6 @@
-use dioxus::prelude::*;
 use crate::components::SocialMedia;
 use crate::personal_info::{CONTACT_PAGE_DATA, GREETING, SOCIAL_MEDIA_LINKS};
+use dioxus::prelude::*;
 const CONTACT_CSS: Asset = asset!("/src/views/contact/contact.css");
 const AVARTAR_IMG: Asset = asset!("/prefabs/address_image.svg");
 const BLOG_IMG: Asset = asset!("/prefabs/blogs_image.svg");

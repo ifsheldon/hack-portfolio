@@ -1,6 +1,6 @@
-use dioxus::prelude::*;
 use crate::components::ExperienceCard;
 use crate::personal_info::EXPERIENCE;
+use dioxus::prelude::*;
 const CAREER_CSS: Asset = asset!("/src/views/career/career.css");
 #[component]
 pub fn Career() -> Element {

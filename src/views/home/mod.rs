@@ -1,6 +1,6 @@
 use crate::components::SocialMedia;
+use crate::personal_info::{GREETING, SKILLS, SOCIAL_MEDIA_LINKS};
 use dioxus::prelude::*;
-use crate::personal_info::{GREETING, SOCIAL_MEDIA_LINKS, SKILLS};
 const HOME_CSS: Asset = asset!("/src/views/home/home.css");
 #[component]
 pub fn Home() -> Element {
