@@ -10,6 +10,6 @@ curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profil
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Setup dioxus, prebuilt by ifsheldon with musl
-wget https://github.com/ifsheldon/dioxus/releases/download/v0.6.3/dx-x86_64-unknown-linux-musl
+curl -LO https://github.com/ifsheldon/dioxus/releases/download/v0.6.3/dx-x86_64-unknown-linux-musl
 mv dx-x86_64-unknown-linux-musl dx
 chmod +x dx
