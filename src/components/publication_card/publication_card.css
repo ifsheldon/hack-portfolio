@@ -1,0 +1,165 @@
+.publication-card {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.publication-card-cover-div {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.publication-card-cover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.publication-card-body-div {
+  grid-column: 2;
+  padding: 20px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
+  padding-right: 44px; /* room for toggle so text doesn't run under it */
+  min-width: 0; /* allow text to wrap instead of overflowing in CSS grid */
+  box-sizing: border-box;
+}
+
+.publication-card-header-div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.publication-card-heading-left {
+  max-width: 70%;
+  min-width: 0;
+}
+
+.publication-card-title {
+  font-size: 1.4rem;
+  margin: 0 0 6px 0;
+  color: #333;
+  max-width: 100%;
+  overflow: visible;
+  white-space: normal;
+}
+
+.publication-card-title a {
+  color: #55198b;
+  text-decoration: none;
+}
+
+.publication-card-authors {
+  font-size: 1rem;
+  margin: 0;
+  color: #666;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.publication-card-heading-right {
+  text-align: right;
+}
+
+
+.publication-card-toggle {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #55198b;
+  padding: 6px;
+  transition: transform 0.2s ease;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+
+.publication-card-toggle.open i {
+  transform: rotate(180deg);
+}
+
+.publication-card-date,
+.publication-card-venue {
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.publication-card-abstract {
+  grid-column: 1 / -1;
+  width: 100%;
+  padding: 0 20px 20px 20px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+  min-width: 0; /* prevent clipping at right edge in grid */
+  box-sizing: border-box;
+}
+
+/* Animated wrapper for abstract expand/collapse */
+.publication-card-abstract-wrapper {
+  grid-column: 1 / -1;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 250ms ease, opacity 200ms ease;
+}
+
+.publication-card-abstract-wrapper.open {
+  max-height: 2000px;
+  opacity: 1;
+}
+
+.publication-card-abstract-title {
+  margin: 12px 0 8px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.publication-card-abstract-content {
+  white-space: pre-line;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+
+@media (max-width: 768px) {
+  .publication-card {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-card-cover-div,
+  .publication-card-body-div {
+    grid-column: 1;
+  }
+
+  .publication-card-header-div {
+    flex-direction: column;
+  }
+
+  .publication-card-heading-left {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .publication-card-heading-right {
+    text-align: left;
+  }
+}

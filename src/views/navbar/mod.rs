@@ -12,6 +12,7 @@ pub fn Navbar() -> Element {
             (Route::Career {}, Route::Career {}) => true,
             (Route::Projects {}, Route::Projects {}) => true,
             (Route::Contact {}, Route::Contact {}) => true,
+            (Route::Publications {}, Route::Publications {}) => true,
             _ => false,
         }
     };
@@ -63,6 +64,11 @@ pub fn Navbar() -> Element {
                         class: if is_active(Route::Projects {}) { "active" } else { "" },
                         to: Route::Projects {},
                         "Projects"
+                    }
+                    Link {
+                        class: if is_active(Route::Publications {}) { "active" } else { "" },
+                        to: Route::Publications {},
+                        "Publications"
                     }
                     Link {
                         class: if is_active(Route::Contact {}) { "active" } else { "" },

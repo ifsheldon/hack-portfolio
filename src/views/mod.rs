@@ -10,3 +10,5 @@ mod contact;
 pub use contact::Contact;
 mod navbar;
 pub use navbar::Navbar;
+mod publications;
+pub use publications::Publications;

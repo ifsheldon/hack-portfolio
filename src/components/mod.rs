@@ -8,3 +8,5 @@ mod experience_card;
 pub use experience_card::ExperienceCard;
 mod github_repo_card;
 pub use github_repo_card::GithubRepoCard;
+mod publication_card;
+pub use publication_card::PublicationCard;

@@ -1,6 +1,6 @@
-use std::sync::LazyLock;
 use crate::data::*;
 use dioxus::prelude::*;
+use std::sync::LazyLock;
 const PLACE_HOLDER_IMG_PERSON: Asset = asset!(
     "/src/personal_info/images/confidential.jpg"
 );
@@ -152,6 +152,25 @@ pub const EXPERIENCE: LazyLock<Experience> = LazyLock::new(|| Experience {
                     duration: "Jul 2000 - Aug 2019",
                     location: "Earth",
                     description: "Example",
+                },
+            ],
+        },
+    ],
+});
+pub const PUBLICATIONS: LazyLock<Publications> = LazyLock::new(|| Publications {
+    description: "Your awesome research",
+    sections: vec![
+        PublicationSection {
+            category: "Publications",
+            publications: vec![
+                PublicationItem {
+                    title: "Publication 1",
+                    url: None,
+                    cover_image: asset!("/src/personal_info/images/cv.svg"),
+                    publish_date: None,
+                    conference: "Top Conference".into(),
+                    r#abstract: "Publication 1".into(),
+                    authors: vec!["Author 1", "Author 2", "Author 3"],
                 },
             ],
         },

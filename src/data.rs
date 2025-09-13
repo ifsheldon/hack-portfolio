@@ -44,6 +44,26 @@ pub struct SoftwareSkill {
     pub iconify_classname: &'static str,
 }
 #[derive(Debug, Clone, PartialEq)]
+pub struct Publications {
+    pub description: &'static str,
+    pub sections: Vec<PublicationSection>,
+}
+#[derive(Debug, Clone, PartialEq)]
+pub struct PublicationSection {
+    pub category: &'static str,
+    pub publications: Vec<PublicationItem>,
+}
+#[derive(Debug, Clone, PartialEq)]
+pub struct PublicationItem {
+    pub title: &'static str,
+    pub url: Option<&'static str>,
+    pub cover_image: Asset,
+    pub publish_date: Option<&'static str>,
+    pub conference: Option<&'static str>,
+    pub r#abstract: Option<&'static str>,
+    pub authors: Vec<&'static str>,
+}
+#[derive(Debug, Clone, PartialEq)]
 pub struct Degrees {
     pub degrees: Vec<Degree>,
 }
