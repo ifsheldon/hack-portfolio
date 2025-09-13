@@ -34,10 +34,18 @@ Fork the repo and:
 
 Happy hacking!
 
+## Vercel Deployment
+
+1. Fork this repo
+2. Import your fork in Vercel, creating a Vercel project
+3. In the project settings - Build and Deployment, override the following
+   * Build Command -> `bash vercel-build.sh`
+   * Install Command -> `bash vercel-install.sh`
+   * Output Directory -> `public`
+
 ## TODOs
 
 * [ ] Fix font loading
-* [ ] Add a guide for Vercel deployment
 * [ ] UI polishments
 
 ## License
