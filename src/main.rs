@@ -1,5 +1,7 @@
 use crate::views::{Career, Contact, Education, Home, Navbar, Projects, Publications};
 use dioxus::prelude::*;
+#[cfg(feature = "server")]
+use dioxus::server::{IncrementalRendererConfig, ServeConfig};
 mod components;
 mod data;
 mod personal_info;
@@ -26,23 +28,41 @@ enum Route {
 }
 const GLOBAL_CSS: Asset = asset!("/src/global.css");
 const MAIN_CSS: Asset = asset!("/src/main.css");
-const FONT_AWESOME_CSS_PATH: &str = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
+const FONT_AWESOME_CSS_PATH: &str =
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css";
 const ICONIFY_JS_PATH: &str = "https://code.iconify.design/1/1.0.7/iconify.min.js";
-#[server(endpoint = "static_routes")]
+
+#[server(endpoint = "static_routes", output = server_fn::codec::Json)]
 async fn static_routes() -> Result<Vec<String>, ServerFnError> {
-    Ok(Route::static_routes().iter().map(ToString::to_string).collect())
+    Ok(Route::static_routes()
+        .iter()
+        .map(ToString::to_string)
+        .collect())
 }
+
 fn main() {
+    #[cfg(feature = "server")]
     LaunchBuilder::new()
-        .with_cfg(
-            server_only! {
-                ServeConfig::builder().incremental(IncrementalRendererConfig::new()
-                .static_dir(std::env::current_exe().unwrap().parent().unwrap()
-                .join("public")).clear_cache(false)).enable_out_of_order_streaming()
-            },
+        .with_cfg(server_only! {
+            ServeConfig::builder()
+            .incremental(
+                IncrementalRendererConfig::new()
+                .static_dir(
+                    std::env::current_exe()
+                    .unwrap()
+                    .parent()
+                    .unwrap()
+                    .join("public")
+                )
+            .clear_cache(false)
         )
+        .enable_out_of_order_streaming()
+        })
         .launch(App);
+    #[cfg(feature = "web")]
+    dioxus::launch(App);
 }
+
 #[component]
 fn App() -> Element {
     rsx! {
